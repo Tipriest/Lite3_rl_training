@@ -14,26 +14,30 @@
 1.  在Ubuntu系统中创建一个python（3.6/3.7/3.8，建议使用3.8）环境。
 
 2.  安装计算平台为CUDA的PyTorch。
-```
-# pytorch
-pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
-```
+    ```
+    # pytorch
+    # 如果你的显卡是RTX40 series
+    pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+    # 如果你的显卡是其他的旧版本
+    pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+    ```
 
-3.  从官方网站下载[Isaac Gym](https://developer.nvidia.com/isaac-gym)（版本 >= preview 3），并将其放入项目的根目录中。
+3.  从官方网站下载[Isaac Gym](https://developer.nvidia.com/isaac-gym)（版本 >= preview 3），并将其放入项目的根目录中，按照Isaac Gym中
+README.txt的说明，用浏览器打开一下docs/install.html文件，遵照说明在当前的环境中安装Isaac Gym包
 
 4. 使用`pip`安装python依赖项。
-```
-pip3 install transformations matplotlib gym tensorboard numpy=1.23.5
-```
+    ```
+    pip3 install transformations matplotlib gym tensorboard numpy==1.23.5
+    ```
 
 5. 通过 pip 安装 legged_gym 和 rsl_rl
-```
-cd legged_gym
-pip install -e .
-
-cd rsl_rl
-pip install -e .
-```
+    ```
+    cd legged_gym
+    pip install -e .
+    
+    cd rsl_rl
+    pip install -e .
+    ```
 
 # 使用方法
 
